@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Button,
   ButtonGroup,
@@ -9,15 +9,8 @@ import { allItems, completedItems, uncompletedItems } from '../actions/itemActio
 
 
 const Footer = ({ item, allItems, completedItems, uncompletedItems }) => {
-  const onAllItem = (id) => {
-    allItems(id)
-  };
-  const onCompletedItems = (id) => {
-    completedItems(id)
-  };
-  const onUncompletedItems = (id) => {
-    uncompletedItems(id)
-  };
+
+
 
   // const doneCount = todoData.filter((el) => el.done).length;
   //   const todoCount = todoData.length - doneCount;
@@ -32,7 +25,7 @@ const Footer = ({ item, allItems, completedItems, uncompletedItems }) => {
 
             color="dark"
             style={{ marginBottom: '2rem' }}
-            onClick={() => onAllItem(items._id)}
+            onClick={allItems}
           >
             All Todos
         </Button>
@@ -40,7 +33,7 @@ const Footer = ({ item, allItems, completedItems, uncompletedItems }) => {
 
             color="dark"
             style={{ marginBottom: '2rem' }}
-            onClick={() => onCompletedItems(items._id)}
+            onClick={completedItems}
           >
             Completed
         </Button>
@@ -48,7 +41,7 @@ const Footer = ({ item, allItems, completedItems, uncompletedItems }) => {
 
             color="dark"
             style={{ marginBottom: '2rem' }}
-            onClick={() => onUncompletedItems(items._id)}
+            onClick={uncompletedItems}
           >
             Undone
         </Button>

@@ -38,20 +38,20 @@ export const setItemsLoading = () => {
   };
 };
 
-export const allItems = id => ({
+export const allItems = () => ({
   type: ALL_ITEMS,
-  payload: id
+
 });
 
-export const completedItems = id => ({
+export const completedItems = () => ({
   type: COMPLETED_ITEMS,
-  payload: id
+
 });
 
 
-export const uncompletedItems = id => ({
+export const uncompletedItems = () => ({
   type: UNCOMPLETED_ITEMS,
-  payload: id
+
 });
 
 export const toggleTodo = id => ({

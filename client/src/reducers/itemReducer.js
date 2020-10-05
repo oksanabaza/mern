@@ -3,7 +3,7 @@ import { GET_ITEMS, ITEMS_LOADING, DELETE_ITEM, ADD_ITEM, TOGGLE_TODO, ALL_ITEMS
 const initialState = {
   items: [],
   loading: false,
-
+  display: "all"
 };
 
 export default function (state = initialState, action) {
@@ -39,17 +39,17 @@ export default function (state = initialState, action) {
     case ALL_ITEMS:
       return {
         ...state,
-        items: state.items.filter(item => item)
+        display: "all"
       }
     case COMPLETED_ITEMS:
       return {
         ...state,
-        items: state.items.filter(item => item.completed)
-      };
+        display: "completed"
+      }
     case UNCOMPLETED_ITEMS:
       return {
         ...state,
-        items: state.items.filter(item => !item.completed)
+        display: "uncompleted"
       };
     default:
       return state;
