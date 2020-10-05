@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from './types';
+import { TOGGLE_TODO, GET_ITEMS, ITEMS_LOADING, DELETE_ITEM, ADD_ITEM, ALL_ITEMS, COMPLETED_ITEMS, UNCOMPLETED_ITEMS } from './types';
 
 export const getItems = () => dispatch => {
   dispatch(setItemsLoading());
@@ -12,6 +12,7 @@ export const getItems = () => dispatch => {
       })
     )
 };
+
 export const addItem = item => dispatch => {
   axios
     .post('/api/items', item)
@@ -22,6 +23,7 @@ export const addItem = item => dispatch => {
       })
     )
 };
+
 export const deleteItem = id => dispatch => {
   axios.delete(`/api/items/${id}`).then(res =>
     dispatch({
@@ -30,9 +32,29 @@ export const deleteItem = id => dispatch => {
     })
   )
 };
-
 export const setItemsLoading = () => {
   return {
     type: ITEMS_LOADING,
   };
 };
+
+export const allItems = id => ({
+  type: ALL_ITEMS,
+  payload: id
+});
+
+export const completedItems = id => ({
+  type: COMPLETED_ITEMS,
+  payload: id
+});
+
+
+export const uncompletedItems = id => ({
+  type: UNCOMPLETED_ITEMS,
+  payload: id
+});
+
+export const toggleTodo = id => ({
+  type: TOGGLE_TODO,
+  payload: id
+});

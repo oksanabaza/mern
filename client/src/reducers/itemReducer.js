@@ -1,8 +1,9 @@
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from '../actions/types';
+import { GET_ITEMS, ITEMS_LOADING, DELETE_ITEM, ADD_ITEM, TOGGLE_TODO, ALL_ITEMS, COMPLETED_ITEMS, UNCOMPLETED_ITEMS } from '../actions/types';
 
 const initialState = {
   items: [],
-  loading: false
+  loading: false,
+
 };
 
 export default function (state = initialState, action) {
@@ -11,7 +12,8 @@ export default function (state = initialState, action) {
       return {
         ...state,
         items: action.payload,
-        loading: false
+        loading: false,
+
       };
     case DELETE_ITEM:
       return {
@@ -28,6 +30,27 @@ export default function (state = initialState, action) {
         ...state,
         loading: true
       }
+    case TOGGLE_TODO:
+      return {
+        items: state.items.map(item => (item._id === action.payload) ? {
+          ...item, completed: !item.completed
+        } : item)
+      };
+    case ALL_ITEMS:
+      return {
+        ...state,
+        items: state.items.filter(item => item)
+      }
+    case COMPLETED_ITEMS:
+      return {
+        ...state,
+        items: state.items.filter(item => item.completed)
+      };
+    case UNCOMPLETED_ITEMS:
+      return {
+        ...state,
+        items: state.items.filter(item => !item.completed)
+      };
     default:
       return state;
   }

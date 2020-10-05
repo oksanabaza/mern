@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import AppNavbar from './components/AppNavbar';
-import ShoppingList from './components/ShoppingList';
+import TodoList from './components/TodoList';
 import ItemModal from './components/ItemModal';
+import Footer from './components/Footer';
 import { Container } from 'reactstrap';
 
 import { Provider } from 'react-redux';
@@ -16,10 +17,9 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <AppNavbar />
-          <Container>
-            <ItemModal />
-            <ShoppingList />
-          </Container>
+          <ItemModal />
+          <TodoList />
+          <Footer />
         </div>
       </Provider>
     );

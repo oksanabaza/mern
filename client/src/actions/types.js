@@ -2,4 +2,8 @@ export const GET_ITEMS = 'GET_ITEMS';
 export const ADD_ITEM = 'ADD_ITEM';
 export const DELETE_ITEM = 'DELETE_ITEM';
 export const ITEMS_LOADING = 'ITEMS_LOADING';
-
+export const TOGGLE_TODO = 'TOGGLE_TODO';
+export const IMP_TODO = 'IMP_TODO';
+export const ALL_ITEMS = 'ALL_ITEMS';
+export const COMPLETED_ITEMS = 'COMPLETED_ITEMS';
+export const UNCOMPLETED_ITEMS = 'UNCOMPLETED_ITEMS';

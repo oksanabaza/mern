@@ -1,48 +1,37 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import {
   Collapse,
   Navbar,
-  NavbarBrand,
   NavbarToggler,
+  NavbarBrand,
   Nav,
-  NavItem,
-  NavLink,
   Container
 } from 'reactstrap';
+import { connect } from 'react-redux';
 
-class AppNavbar extends Component {
-  state = {
-    isOpen: false
-  }
-  toggle = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-  render() {
-    return (
-      <div>
+const AppNavbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-        <Navbar color="dark" dark expend="sm" className="mb-5">
-          <Container>
-            <NavbarBrand href="/">
-              Shopping List
-          </NavbarBrand>
+  const handleToggle = () => setIsOpen(!isOpen);
 
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <NavLink href="/">
-                    Git
-                </NavLink>
-                </NavItem>
-              </Nav>
-            </Collapse>
-          </Container>
-        </Navbar>
-      </div>
-    );
-  }
-}
-export default AppNavbar;
+
+
+  return (
+    <div>
+      <Navbar color="dark" dark expand="sm" className="mb-5">
+        <Container>
+          <NavbarBrand href="/">Todo List</NavbarBrand>
+          <NavbarToggler onClick={handleToggle} />
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+            </Nav>
+          </Collapse>
+        </Container>
+      </Navbar>
+    </div>
+  );
+};
+
+
+export default connect()(AppNavbar);
+
