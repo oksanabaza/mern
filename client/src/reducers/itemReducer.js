@@ -1,4 +1,4 @@
-import { GET_ITEMS, ITEMS_LOADING, DELETE_ITEM, ADD_ITEM, TOGGLE_TODO, ALL_ITEMS, COMPLETED_ITEMS, UNCOMPLETED_ITEMS } from '../actions/types';
+import { GET_ITEMS, ITEMS_LOADING, DELETE_ITEM, ADD_ITEM, TOGGLE_TODO, ALL_ITEMS, COMPLETED_ITEMS, UNCOMPLETED_ITEMS, TOGGLE_IMP } from '../actions/types';
 
 const initialState = {
   items: [],
@@ -32,9 +32,19 @@ export default function (state = initialState, action) {
       }
     case TOGGLE_TODO:
       return {
+        ...state,
         items: state.items.map(item => (item._id === action.payload) ? {
           ...item, completed: !item.completed
-        } : item)
+        } : item),
+
+      };
+    case TOGGLE_IMP:
+      return {
+        ...state,
+        items: state.items.map(item => (item._id === action.payload) ? {
+          ...item, important: !item.important
+        } : item),
+
       };
     case ALL_ITEMS:
       return {

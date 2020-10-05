@@ -12,9 +12,6 @@ const Footer = ({ item, allItems, completedItems, uncompletedItems }) => {
 
 
 
-  // const doneCount = todoData.filter((el) => el.done).length;
-  //   const todoCount = todoData.length - doneCount;
-
 
   const { items } = item;
   return (
@@ -27,7 +24,7 @@ const Footer = ({ item, allItems, completedItems, uncompletedItems }) => {
             style={{ marginBottom: '2rem' }}
             onClick={allItems}
           >
-            All Todos
+            All
         </Button>
           <Button
 
@@ -35,7 +32,7 @@ const Footer = ({ item, allItems, completedItems, uncompletedItems }) => {
             style={{ marginBottom: '2rem' }}
             onClick={completedItems}
           >
-            Completed
+            Compl
         </Button>
           <Button
 
@@ -48,6 +45,7 @@ const Footer = ({ item, allItems, completedItems, uncompletedItems }) => {
         </ButtonGroup>
 
       </Container>
+
     </div>
   )
 };

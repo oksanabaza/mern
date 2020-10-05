@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { TOGGLE_TODO, GET_ITEMS, ITEMS_LOADING, DELETE_ITEM, ADD_ITEM, ALL_ITEMS, COMPLETED_ITEMS, UNCOMPLETED_ITEMS } from './types';
+import { TOGGLE_TODO, GET_ITEMS, ITEMS_LOADING, DELETE_ITEM, ADD_ITEM, ALL_ITEMS, COMPLETED_ITEMS, UNCOMPLETED_ITEMS, TOGGLE_IMP } from './types';
 
 export const getItems = () => dispatch => {
   dispatch(setItemsLoading());
@@ -38,23 +38,27 @@ export const setItemsLoading = () => {
   };
 };
 
-export const allItems = () => ({
+export const allItems = id => ({
   type: ALL_ITEMS,
-
+  payload: id
 });
 
-export const completedItems = () => ({
+export const completedItems = id => ({
   type: COMPLETED_ITEMS,
-
+  payload: id
 });
 
 
-export const uncompletedItems = () => ({
+export const uncompletedItems = id => ({
   type: UNCOMPLETED_ITEMS,
-
+  payload: id
 });
 
 export const toggleTodo = id => ({
   type: TOGGLE_TODO,
+  payload: id
+});
+export const toggleImp = id => ({
+  type: TOGGLE_IMP,
   payload: id
 });

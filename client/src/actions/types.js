@@ -7,3 +7,4 @@ export const IMP_TODO = 'IMP_TODO';
 export const ALL_ITEMS = 'ALL_ITEMS';
 export const COMPLETED_ITEMS = 'COMPLETED_ITEMS';
 export const UNCOMPLETED_ITEMS = 'UNCOMPLETED_ITEMS';
+export const TOGGLE_IMP = 'TOGGLE_IMP';
