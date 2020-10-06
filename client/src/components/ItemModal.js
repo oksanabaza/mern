@@ -58,7 +58,7 @@ const ItemModal = ({ addItem }) => {
                   type="text"
                   name="name"
                   id="item"
-                  placeholder="Add shopping item"
+                  placeholder="what needs to be done"
                   onChange={handleChangeName}
                 />
                 <Button color="dark" style={{ marginTop: '2rem' }} block>

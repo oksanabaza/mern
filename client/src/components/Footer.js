@@ -13,7 +13,7 @@ const Footer = ({ item, allItems, completedItems, uncompletedItems }) => {
 
 
 
-  const { items } = item;
+  // const { items } = item;
   return (
     <div>
       <Container>
@@ -32,7 +32,7 @@ const Footer = ({ item, allItems, completedItems, uncompletedItems }) => {
             style={{ marginBottom: '2rem' }}
             onClick={completedItems}
           >
-            Compl
+            Done
         </Button>
           <Button
 
@@ -40,7 +40,7 @@ const Footer = ({ item, allItems, completedItems, uncompletedItems }) => {
             style={{ marginBottom: '2rem' }}
             onClick={uncompletedItems}
           >
-            Undone
+            Active
         </Button>
         </ButtonGroup>
 

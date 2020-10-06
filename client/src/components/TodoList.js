@@ -26,6 +26,10 @@ const TodoList = (props) => {
         setTodos(items.filter(item => !item.completed))
         break
       }
+      default: {
+        setTodos(items)
+        break
+      }
 
     }
   }, [display, items]);

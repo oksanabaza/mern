@@ -3,7 +3,8 @@ import AppNavbar from './components/AppNavbar';
 import TodoList from './components/TodoList';
 import ItemModal from './components/ItemModal';
 import Footer from './components/Footer';
-import { Container } from 'reactstrap';
+
+// import { Container } from 'reactstrap';
 
 import { Provider } from 'react-redux';
 import store from './store';
