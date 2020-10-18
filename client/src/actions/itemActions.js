@@ -32,6 +32,8 @@ export const deleteItem = id => dispatch => {
     })
   )
 };
+
+
 export const setItemsLoading = () => {
   return {
     type: ITEMS_LOADING,

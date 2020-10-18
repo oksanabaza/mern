@@ -87,8 +87,8 @@ const TodoList = (props) => {
 const mapStateToProps = (state) => ({
   items: state.item.items,
   display: state.item.display,
-
 });
+
 
 
 export default connect(mapStateToProps, { getItems, deleteItem, toggleTodo, toggleImp })(TodoList);

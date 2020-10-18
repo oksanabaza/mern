@@ -44,8 +44,16 @@ export default function (state = initialState, action) {
         items: state.items.map(item => (item._id === action.payload) ? {
           ...item, important: !item.important
         } : item),
-
       };
+    // case TOGGLE_IMP:
+    //   return {
+    //     ...state,
+    //     items: state.items.map((item) =>
+    //       item._id === action.payload._id ? action.payload : item
+    //     ),
+    //     errors: null,
+    //   };
+
     case ALL_ITEMS:
       return {
         ...state,

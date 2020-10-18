@@ -12,6 +12,11 @@ router.get('/', (req, res) => {
     .sort({ date: -1 })
     .then(items => res.json(items));
 });
+//get 1 item
+router.get('/:id', (req, res) => {
+  Item.findOne({ _id: req.params.id })
+    .then(item => res.json(item));
+});
 //@route POST api/items
 //@desc Create an item
 //@access Public
@@ -30,5 +35,17 @@ router.delete('/:id', (req, res) => {
     .then(item => item.remove().then(() => res.json({ success: true })))
     .catch(err => res.status(404).json({ success: false }));
 });
+
+
+
+router.put('/:id', (req, res) => {
+
+  Item.findByIdAndUpdate({ _id: req.params.id }, req.body)
+    .then(item => res.json(req.body))
+    .catch(err => res.status(404).json(err))
+
+});
+
+
 
 module.exports = router;
